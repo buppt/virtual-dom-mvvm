@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="buppt" content="https://github.com/buppt">
+    <title>virtual dom</title>
+    <style>
+    li{
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <script src="./vnode.js"></script>
+    <script src="./patch.js"></script>
+    <script>
+    var ul = new VNode('ul',{class: 'ul'},[
+        new VNode('p', {class: 'li'},[],'virtual dom'),
+        new VNode('li',{class: 'li'},[],'mvvm'),
+        new VNode('li', {class: 'li'},[],'virtual dom'),
+        new VNode('input',{type: 'text'}),
+        new VNode('li', {class: 'li'},[],'virtual dom'),
+        new VNode('li',{},[],'mvvm'),
+        new VNode('li',{class: 'li'},[],'buppt')
+        ])
+    var ul2 = new VNode('ul',{class: 'ul'},[
+        new VNode('li', {class: 'li'},[],'buppt'),
+        new VNode('li',{class: 'li'},[],'mvvm'),
+        new VNode('p',{},[],'h1 dom'),
+        new VNode('li',{class: 'li'},[],'h1 dom'),
+        new VNode('div',{},[],'h1 dom'),
+        new VNode('input',{type:'text'},[]),
+        ])
+
+    document.body.appendChild(ul.render())
+    setTimeout(()=>patch(ul,ul2),1000)  
+    </script>
+</body>
+</html>
