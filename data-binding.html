@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="buppt" content="https://github.com/buppt">
+    <title>data binding</title>
+</head>
+<body>
+    <h1 id="name"></h1>
+    <p id="num"></p>
+    <h2 id="name2"></h2>
+    <script src="./instance/index.js"></script>
+    <script src="./observer/index.js"></script>
+    <script src="./observer/dep.js"></script>
+    <script src="./observer/watcher.js"></script>
+    <script>
+    
+    var name1 = document.getElementById('name');
+    var num = document.getElementById('num');
+    var name2 = document.getElementById('name2');
+    var selfVue = new Vue({
+        name: 'hello world',
+        a:1,
+    });
+    selfVue.bindData(name1,'name')
+    selfVue.bindData(num,'a')
+    selfVue.bindData(name2,'name')
+    
+    window.setTimeout(function () {
+        console.log('name值改变了');
+        selfVue.data.name = 'canfoo';
+        selfVue.data.a = 2;
+    }, 2000);
+    </script>
+</body>
+</html>

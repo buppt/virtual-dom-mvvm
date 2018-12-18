@@ -13,8 +13,8 @@
     </style>
 </head>
 <body>
-    <script src="./vnode.js"></script>
-    <script src="./patch.js"></script>
+    <script src="./vdom/vnode.js"></script>
+    <script src="./vdom/patch.js"></script>
     <script>
     var ul = new VNode('ul',{class: 'ul'},[
         new VNode('p', {class: 'li'},[],'virtual dom'),
@@ -35,7 +35,10 @@
         ])
 
     document.body.appendChild(ul.render())
-    setTimeout(()=>patch(ul,ul2),1000)  
+    setTimeout(()=>{
+        console.log('vnode change')
+        patch(ul,ul2)
+    },2000)  
     </script>
 </body>
 </html>

@@ -28,6 +28,7 @@ class VNode{
             element.appendChild(document.createTextNode(this.text))
         }
         this.elm = element;
+        console.log(element)
         return element;
     }
 }
