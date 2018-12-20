@@ -11,6 +11,7 @@
     <h1 id="name"></h1>
     <p id="num"></p>
     <h2 id="name2"></h2>
+    <input id="input" type="text"/>
     <script src="./instance/index.js"></script>
     <script src="./observer/index.js"></script>
     <script src="./observer/dep.js"></script>
@@ -20,19 +21,23 @@
     var name1 = document.getElementById('name');
     var num = document.getElementById('num');
     var name2 = document.getElementById('name2');
+    var input = document.getElementById('input');
+
     var selfVue = new Vue({
         name: 'hello world',
         a:1,
     });
+
     selfVue.bindData(name1,'name')
     selfVue.bindData(num,'a')
     selfVue.bindData(name2,'name')
+    selfVue.bindData(input,'name')
     
-    window.setTimeout(function () {
-        console.log('name值改变了');
-        selfVue.data.name = 'canfoo';
-        selfVue.data.a = 2;
-    }, 2000);
+    // window.setTimeout(function () {
+    //     console.log('name值改变了');
+    //     selfVue.data.name = 'canfoo';
+    //     selfVue.data.a = 2;
+    // }, 2000);
     </script>
 </body>
 </html>

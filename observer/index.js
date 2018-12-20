@@ -11,7 +11,7 @@ class Observer{
     
 }
 
-function observe(value, vm) {
+function observe(value) {
     if (!value || typeof value !== 'object') {
         return;
     }
@@ -38,7 +38,6 @@ function defineReactive(data, key, val) {
                 return;
             }
             val = newVal;
-            console.log(val);
             
             dep.notify();
         }
