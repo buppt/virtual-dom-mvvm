@@ -38,7 +38,6 @@ function defineReactive(data, key, val) {
                 return;
             }
             val = newVal;
-            
             dep.notify();
         }
     });
