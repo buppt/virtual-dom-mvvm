@@ -1,4 +1,4 @@
-class Router2 {
+class Router {
     constructor (options) {
       this.routes = {};
   

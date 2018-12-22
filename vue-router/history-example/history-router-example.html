@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>History</title>
+</head>
+<body>
+  <div>
+    <a href="javascript:void(0);" data-href="/">home</a>
+    <a href="javascript:void(0);" data-href="/test">test</a>
+    <a href="javascript:void(0);" data-href="/404">404</a>
+      
+    <div id="content"></div>
+  </div>
+  
+  <script type="text/javascript" src="./history-router.js"></script>
+  <script type="text/javascript">
+    const router = new Router([
+      {
+        path: '/',
+        component: 'index'
+      },
+      {
+        path: '/test',
+        component: 'test'
+      },
+      {
+        path: '/404',
+        component: '404'
+      }
+    ]);
+  </script>
+</body>
+</html>
