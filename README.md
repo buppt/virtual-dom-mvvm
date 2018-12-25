@@ -1,13 +1,26 @@
 # virtual-dom
 用 vue@2.5.17 中的思路实现的 virtual dom.  
 
+
+<a href='https://buppt.github.io/virtual-dom-mvvm/data-binding.html'>双向绑定在线查看</a>
+<a href='https://buppt.github.io/virtual-dom-mvvm/vdom-example.html'>虚拟dom在线查看</a>
+<a href='https://buppt.github.io/virtual-dom-mvvm/vue-router/hash-router-example.html'>hash router在线查看</a>
+<a href='https://buppt.github.io/virtual-dom-mvvm/vue-router/history-example/history-router-example.html'>history router在线查看</a>
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20181221172933219.gif)
+<br/>
 <a href='https://github.com/buppt/virtual-dom-mvvm#双向绑定实现讲解'>双向绑定实现讲解</a>
+
+<br/>
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20181221223702723.gif)
+
+<br/>
 <a href='https://github.com/buppt/virtual-dom-mvvm#虚拟dom实现讲解'>虚拟dom实现讲解</a>
 
 ## 双向绑定实现讲解
 其实写双向绑定的文章也挺多了，不过都没有仔细讲发布者-订阅者模式在其中的使用，本文尽量讲解清楚所有代码，代码结构、函数等完全按照vue@2.5.17源码思路实现（除了新建vue类的时候）。<a href='https://github.com/buppt/virtual-dom-mvvm'>github地址在这里</a>。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20181221172933219.gif)
 图中，input的value、h1、h2都与`data.name`绑定，可以通过input改变`data.name`，`data.name`改变后（发布者）与之绑定的h1、h2（两个订阅者）都会改变，即实现了双向绑定。
 
 本文目的是学习双向绑定，没有实现模版解析，所以并不能像vue一样通过`{{name}}`就将这个位置的内容与`data.name`绑定，需要手动将element和data绑定。不过这不重要。
@@ -192,7 +205,6 @@ pushTarget(this)先把Dep.target设置为自己，然后获取data中数据的�
 ## 虚拟dom实现讲解
 网上实现虚拟dom的文章也很多了，本项目代码结构、函数等完全按照vue@2.5.17源码思路实现，主要也是为了总结一下自己的学习。<a href='https://github.com/buppt/virtual-dom-mvvm'>github地址在这里</a>。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20181221223702723.gif)
 
 从图中可以看到，这个dom树改变了许多地方，但是只新建了一个div元素，这说明其余的元素只是做了移动和文本内容的修改，这比重新渲染整棵dom树要节省很多资源。
 
