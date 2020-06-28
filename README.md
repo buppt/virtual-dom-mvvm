@@ -1,5 +1,10 @@
+> *此项目不再更新，Vue2 整体源码分析与实现，请移步新仓库：https://github.com/buppt/YourVue*
+
 # virtual-dom
+
 用 vue@2.5.17 中的思路实现的 virtual dom.  
+
+
 
 
 <a href='https://buppt.github.io/virtual-dom-mvvm/data-binding.html'>双向绑定在线查看</a>
